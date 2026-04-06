@@ -28,7 +28,7 @@ public class movimiento : MonoBehaviour
     private GameObject spawn;
     private GameObject cops;
     private GameObject win;
-    [SerializeField] private death death;
+   
     [Header("Variables")]
     private float defaultGravity;
 
@@ -420,10 +420,7 @@ public class movimiento : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("spawn"))
-        {
-            death.spawn = true;
-        }
+       
             if (collision.gameObject.CompareTag("cops"))
         {
             Respawn();
