@@ -8,8 +8,8 @@ public class enemy_weapon : MonoBehaviour
     public GameObject player;
     public Transform pivot;
     public Transform firePoint;
-    
-    
+    public float velocidadRotacion = 5f;
+
     void Start()
     {
         
@@ -24,13 +24,12 @@ public class enemy_weapon : MonoBehaviour
 
     private void RotateGun(Vector3 lookPoint)
     {
-
         Vector3 distanceVector = lookPoint - pivot.position;
         float angle = Mathf.Atan2(distanceVector.y, distanceVector.x) * Mathf.Rad2Deg;
-        pivot.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+        Quaternion rotacionObjetivo = Quaternion.Euler(0, 0, angle + 180f);
 
-        Debug.Log(lookPoint);
+        pivot.rotation = Quaternion.Lerp(pivot.rotation, rotacionObjetivo, velocidadRotacion * Time.deltaTime);
     }
 
 
