@@ -3,9 +3,13 @@ using UnityEngine.SceneManagement;
 public class scenemanager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public  void cambio()
+    public  void cambio(string escena)
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene(escena);
     }
 
+    public void salir()
+    {
+        Application.Quit();
+    }
 }
