@@ -80,7 +80,7 @@ public class Tutorial_GrapplingGun : MonoBehaviour
     {
   
         
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.E))
         {
             SetGrapplePoint();
         }

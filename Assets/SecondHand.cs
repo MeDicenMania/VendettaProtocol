@@ -61,9 +61,8 @@ public class Suction : MonoBehaviour
             bullets = 3;
         }
 
-        if (canShoot() && Input.GetKeyDown(KeyCode.Mouse0))
+        if (canShoot() && Input.GetMouseButtonDown(1))
         {
-
             Repell();
         }
     }
