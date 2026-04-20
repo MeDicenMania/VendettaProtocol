@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Tutorial_GrapplingGun : MonoBehaviour
 {
@@ -7,98 +6,141 @@ public class Tutorial_GrapplingGun : MonoBehaviour
     public Tutorial_GrapplingRope grappleRope;
     public movimiento mov;
     public colisiones coll;
-    [Header("Layers Settings:")]
-    [SerializeField] private int grappableLayerNumber = 9;
 
-    [Header("Main Camera:")]
+    [Header("Camera")]
     public Camera m_camera;
 
-    [Header("Transform Ref:")]
+    [Header("Transforms")]
     public Transform gunHolder;
     public Transform gunPivot;
     public Transform firePoint;
 
-    [Header("Physics Ref:")]
+    [Header("Physics")]
     public SpringJoint2D m_springJoint2D;
     public Rigidbody2D rb;
 
- 
+    [Header("Distance")]
+    public float maxDistnace = 10f;
+    public float minDistance = 0.5f;
 
-
-    [Header("Distance:")]
-
-    [SerializeField] private bool hasMaxDistance = false;
-     public float maxDistnace;
-    private Vector2 targetPos;
-    [SerializeField] private float dashSpeed;
-    [Header("Grapplepoint")]
-    [SerializeField] private float dashTimer;
-    [SerializeField] private float dashTime = 5f;
-    [SerializeField] private float dash;
-    [SerializeField] private float speedBuildUp;
-    public  bool isDashing = false;
+    [Header("Dash")]
+    [SerializeField] private float dashSpeed = 20f;
+    [SerializeField] private float dashTime = 0.5f;
+    private float dashTimer;
+    public bool isDashing = false;
     private Vector2 dashTarget;
-    private GameObject[] allGrapplePoints;
 
-  
-    private enum LaunchType
-    {
-        Transform_Launch,
-        Physics_Launch
-    }
+    [Header("Obstacle")]
+    [SerializeField] private LayerMask obstacleMask;
+    private bool hayObstaculo;
 
-    [Header("Launching:")]
-    [SerializeField] private bool launchToPoint = true;
-    [SerializeField] private LaunchType launchType = LaunchType.Physics_Launch;
-    [SerializeField] private float launchSpeed = 1;
-
-  
-    [SerializeField] private bool autoConfigureDistance = false;
-    [SerializeField] private float targetDistance = 3;
-    [SerializeField] private float targetFrequncy = 1;
-
+    [Header("Grapple")]
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 grappleDistanceVector;
- 
-   
 
-   
-    
-  
-
-
-
+    public bool isGrabing;
+    public Vector2 forceJump;
+    public float forceGrab;
+    [SerializeField] private int exitGrabSide;
     private void Start()
     {
-        
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
-        allGrapplePoints = GameObject.FindGameObjectsWithTag("grapplepoint");
     }
 
     private void Update()
     {
-  
-        
-        if (Input.GetKey(KeyCode.E))
+       
+        ActualizarRaycastObstaculo();
+        if (Input.GetKeyDown(KeyCode.E) && !hayObstaculo)
         {
             SetGrapplePoint();
         }
 
    
-
-        if (Vector2.Distance(rb.position, dashTarget) < launchSpeed || dashTimer <= 0)
+        if (isDashing)
         {
-            StopDash();
-            Debug.Log("Dash completado al punto del gancho");
+            float dist = Vector2.Distance(rb.position, dashTarget);
+
+            if (dist <= minDistance)
+            {
+                StopDash();
+            }
         }
 
-       
+        if ((Input.GetKeyDown(KeyCode.D)))
+        {
+            exitGrabSide = 1;
+        }
+        if ((Input.GetKeyDown(KeyCode.A)))
+        {
+            exitGrabSide = -1;
+        }
+
+
+        if (isGrabing)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Vector2 jump = new Vector2(forceJump.x, forceJump.y);
+
+                // aplicar direcciÃ³n UNA sola vez
+                jump.x *= exitGrabSide;
+
+                // corregir momentum
+                if (Mathf.Sign(rb.linearVelocity.x) != Mathf.Sign(jump.x))
+                {
+                    jump.x -= rb.linearVelocity.x;
+                }
+                if (rb.linearVelocity.y < 0)
+                {
+                    jump.y -= rb.linearVelocity.y;
+                }
+
+                // aplicar fuerza
+                rb.AddForce(jump * forceGrab, ForceMode2D.Impulse);
+
+                ExitGrab();
+            }
+        }
+     
+        if (hayObstaculo)
+        {
+            CancelGrapple();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDashing)
+        {
+            dashTimer -= Time.fixedDeltaTime;
+
+            Vector2 dir = (dashTarget - rb.position);
+            float dist = dir.magnitude;
+
+            if (dist <= minDistance)
+            {
+                StopDash();
+                isGrabing = true;
+                return;
+            }
+
+            dir.Normalize();
+
+        
+            rb.MovePosition(rb.position + dir * dashSpeed * Time.fixedDeltaTime);
+
+            if (dashTimer <= 0f)
+            {
+                StopDash();
+            }
+        }
     }
 
    
 
-    void SetGrapplePoint()
+    public  void SetGrapplePoint()
     {
         Transform nearestPoint = GetNearestGrapplePoint(firePoint.position);
 
@@ -106,71 +148,71 @@ public class Tutorial_GrapplingGun : MonoBehaviour
         {
             grapplePoint = nearestPoint.position;
             grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+
             grappleRope.enabled = true;
-           
+
+            StartDash();
         }
         else
         {
-            Debug.Log("No hay ningún punto de agarre dentro del rango.");
+            Debug.Log("No hay punto de agarre");
         }
     }
-
-
-   
-
-   
-    public void Grapple()
+    private void ExitGrab()
     {
-        
-        m_springJoint2D.autoConfigureDistance = false;
-        if (launchToPoint)
-        {
-            switch (launchType)
-            {
-                case LaunchType.Physics_Launch:
-                    {
-                        m_springJoint2D.enabled = true;
-                        m_springJoint2D.connectedAnchor = grapplePoint;
-                        float dist = Vector2.Distance(transform.position, grapplePoint);
-                        m_springJoint2D.distance = dist * 0.7f;
-                        m_springJoint2D.frequency = launchSpeed;
-                        m_springJoint2D.dampingRatio = 0.3f;
+        isGrabing = false;
 
-                        break;
-                    }
-                case LaunchType.Transform_Launch:
-                    {
-                        rb.gravityScale = 1;
-                        rb.linearVelocity = Vector2.zero;
-                        dashTimer = dashTime;
-                        isDashing = true;
-                        dashTarget = grapplePoint;
-                        break;
-                    }
-            }
-
-        }
-    }
-    private void FixedUpdate()
-    {
-        if (isDashing)
-        {
-            dashTimer -= Time.deltaTime;
-
-
-            Vector2 dir = (dashTarget - rb.position).normalized;
-            float forceMagnitude = Mathf.MoveTowards(dashSpeed, dash, Time.deltaTime * speedBuildUp);
-            rb.AddForce(dir * forceMagnitude, ForceMode2D.Force);
-        }
-    }
-    private void StopDash()
-    {
-
-        dashTimer = 1;
-        isDashing = false;
         rb.gravityScale = 3;
-        grappleRope.enabled = false;
     }
+
+    void StartDash()
+    {
+        isDashing = true;
+        dashTimer = dashTime;
+
+        dashTarget = grapplePoint;
+
+        rb.gravityScale = 0f; 
+    }
+
+    void StopDash()
+    {
+        isDashing = false;
+        grappleRope.enabled = false;
+
+        isGrabing = true;
+        rb.gravityScale = 0;
+        rb.linearVelocity = Vector2.zero;
+    }
+
+    void CancelGrapple()
+    {
+        isDashing = false;
+        grappleRope.enabled = false;
+        rb.gravityScale = 3f;
+    }
+
+    
+
+    private void ActualizarRaycastObstaculo()
+    {
+        if (grapplePoint != Vector2.zero)
+        {
+            Vector2 dir = grapplePoint - (Vector2)rb.position;
+            float dist = dir.magnitude;
+
+            RaycastHit2D hit = Physics2D.Raycast(rb.position, dir.normalized, dist, obstacleMask);
+            hayObstaculo = hit.collider != null;
+            Debug.DrawLine(rb.position, grapplePoint, hayObstaculo ? Color.red : Color.green);
+        }
+        else
+        {
+            hayObstaculo = false;
+        }
+    }
+
+   
+
     private Transform GetNearestGrapplePoint(Vector2 fromPosition)
     {
         Transform nearest = null;
@@ -188,15 +230,13 @@ public class Tutorial_GrapplingGun : MonoBehaviour
 
         return nearest;
     }
-   
 
     private void OnDrawGizmosSelected()
     {
-        if (firePoint != null && hasMaxDistance)
+        if (firePoint != null)
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(firePoint.position, maxDistnace);
         }
     }
-
 }

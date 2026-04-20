@@ -18,6 +18,9 @@ public class movimiento : MonoBehaviour
 
     [SerializeField] private float wallJumpLockTime = 0.15f;
     [HideInInspector] public float wallJumpLockCounter;
+     public float recoilTime;
+    public float recoilDuration = 0.15f;
+    private float recoilTimer;
 
     [Header("Referencias")]
     private Climbing Climbing;
@@ -28,7 +31,7 @@ public class movimiento : MonoBehaviour
     private GameObject spawn;
     private GameObject cops;
     private GameObject win;
-   
+   [SerializeField] private Tutorial_GrapplingGun grapple;
     [Header("Variables")]
     private float defaultGravity;
 
@@ -63,9 +66,9 @@ public class movimiento : MonoBehaviour
     private Vector2 dir;
     private Vector2 force;
     //Waljump 
-    [SerializeField] private float wallforceJump;
+     public float wallforceJump;
 
-    [SerializeField] private Vector2 wallJumpForce;
+    public  Vector2 wallJumpForce;
     private float lastWallJumpDir;
     private float slideSpeed = 2.5f;
     private int Dir;
@@ -80,8 +83,8 @@ public class movimiento : MonoBehaviour
      public bool isWallJumping;
     [HideInInspector] public bool isSliding;
     [HideInInspector] private bool isFacingRight = true;
-    
-    
+    [HideInInspector] public bool isRecoiling;
+
     void Start()
     {
         Climbing = GetComponent<Climbing>();
@@ -107,6 +110,9 @@ public class movimiento : MonoBehaviour
         LastOnWallLeftTime -= Time.deltaTime;
         LastPressedJumpTime -= Time.deltaTime;
         wallJumpStartTime += Time.deltaTime;
+        recoilTime -= Time.deltaTime;
+
+
 
         //inputs
         moveInputx = Input.GetAxisRaw("Horizontal");
@@ -155,18 +161,10 @@ public class movimiento : MonoBehaviour
         {
             isSliding = false;
         }
-        //jump cut
-
-        if (rb.linearVelocityY < 0)
-        {
-            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallmultiplier - 1) * Time.deltaTime;
-        }
-        else if (rb.linearVelocityY > 0 && !Input.GetKey(KeyCode.Space))
-        {
-            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowjumpmultiplier - 1) * Time.deltaTime;
-        }
        
-        if(coll.enPiso || Climbing.isClimbing)
+        HandleGravity();
+
+        if (coll.enPiso || Climbing.isClimbing)
         {
             wallJumpForce = new Vector2(10f, 10f);
             lastWallJumpDir = 0;
@@ -237,8 +235,48 @@ public class movimiento : MonoBehaviour
        
         LastOnWallTime = Mathf.Max(LastOnWallLeftTime, LastOnWallRightTime);
 
+        if (isRecoiling)
+        {
+            recoilTimer -= Time.deltaTime;
+            if (recoilTimer <= 0)
+            {
+                isRecoiling = false;
+            }
+        }
+
 
     }
+
+    public void StartRecoil()
+    {
+        recoilTimer = recoilDuration;
+    }
+
+    void HandleGravity()
+    {
+       
+        if (isRecoiling)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * 2f * Time.deltaTime;
+            return;
+        }
+
+        
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallmultiplier - 1) * Time.deltaTime;
+        }
+       
+        else if (rb.linearVelocity.y > 0)
+        {
+            if (!Input.GetKey(KeyCode.Space))
+            {
+                // salto corto
+                rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowjumpmultiplier - 1) * Time.deltaTime;
+            }
+        }
+    }
+
 
 
     public void WallJump(int Dir)
@@ -325,7 +363,7 @@ public class movimiento : MonoBehaviour
         //Debug.Log("running");
         isSliding = false;
 
-        if (CanRun())
+        if (CanRun() )
         {
              targetSpeed = moveInputx * velocity;
 
@@ -359,8 +397,12 @@ public class movimiento : MonoBehaviour
 
 
             playerVelocity = rb.linearVelocity.x ;
-        } 
-        
+        }
+       
+        if (!coll.enPiso)
+        {
+            accelRate *= 0.5f; // menos control en aire
+        }
 
     }
 
@@ -411,7 +453,7 @@ public class movimiento : MonoBehaviour
     }
     public bool CanRun()
     {
-       if  (!isWallJumping && !sm.isSlideJumping)
+       if  (!isWallJumping && !sm.isSlideJumping && !grapple.isGrabing)
         return true;
             else 
         return false;

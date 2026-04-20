@@ -34,12 +34,12 @@ public class Suction : MonoBehaviour
 
     [Header("Timers")]
     private float shootCd;
-
-
+    
+    
     [Header("Bools")]
     private bool soytgay = true;
     public bool isSucc;
-
+    [SerializeField] float maxSpeed;
     void Start()
     {
         bullets = 3;
@@ -74,44 +74,51 @@ public class Suction : MonoBehaviour
         shootCd = shootCooldown;
         bullets--;
 
+        mov.recoilTime = mov.recoilDuration;
+        mov.isRecoiling = true;
+        mov.StartRecoil();
+
         Vector2 baseDir = (mousePos - (Vector2)firePoint.position).normalized;
 
-
-        if (!coll.enPiso && rb.linearVelocity.y < 0)
+        // Cancelar velocidad en dirección del disparo
+        float dot = Vector2.Dot(rb.linearVelocity, -baseDir);
+        if (dot > 0)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.2f);
+            rb.linearVelocity -= (-baseDir) * dot;
         }
 
+        // Reducir caída
+        if (!coll.enPiso)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Min(rb.linearVelocity.y, 0));
+        }
 
-        float currentX = rb.linearVelocity.x;
+        // Recoil controlado
+        Vector2 recoil = -baseDir * gunForce;
+        if (!coll.enPiso) recoil *= 0.8f;
 
+        rb.linearVelocity += recoil;
 
-        rb.linearVelocity = new Vector2(currentX, rb.linearVelocity.y);
+        // Clamp velocidad
+         maxSpeed = 35f;
+        rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, maxSpeed);
 
-
-        float airMultiplier = coll.enPiso ? 1f : 1.5f;
-
-        rb.AddForce(-baseDir * gunForce * airMultiplier, ForceMode2D.Impulse);
-
-
+        // Disparo visual (lo tuyo igual)
         float step = (spreadAngle * 2) / (pellets - 1);
         float startAngle = -spreadAngle;
 
         for (int i = 0; i < pellets; i++)
         {
             float angleOffset = startAngle + (step * i);
-
             Vector2 direccion = Quaternion.Euler(0, 0, angleOffset) * baseDir;
 
             GameObject bala = Instantiate(balaPrefab, firePoint.position, Quaternion.identity);
-
             bala.GetComponent<Bala>().SetDirection(direccion);
 
             Rigidbody2D balaRb = bala.GetComponent<Rigidbody2D>();
             balaRb.AddForce(direccion * bulletForce, ForceMode2D.Impulse);
 
             float angle = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-
             bala.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }

@@ -81,7 +81,7 @@ public class Tutorial_GrapplingRope : MonoBehaviour
             if (!isGrappling)
             {
                 Debug.Log("aAAAAAAAA");
-                grapplingGun.Grapple();
+                grapplingGun.SetGrapplePoint();
                 isGrappling = true;
             }
             if (waveSize > 0)
