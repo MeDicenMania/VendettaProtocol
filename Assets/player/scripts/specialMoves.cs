@@ -12,7 +12,7 @@ public class specialMoves : MonoBehaviour
     public Transform orientation;
     [Header("Bools")]
     public bool rolling;
-
+    BoxCollider2D box;
     [Header("Variables")]
     private float originalRadius;
     private Vector2 originalOffset;
@@ -133,7 +133,7 @@ public class specialMoves : MonoBehaviour
              
         //if (rolling) return;
       
-        playerobj.localScale = new Vector2(playerobj.localScale.x, rollYScale);
+       
         circleCol.radius = rollRadius;
         circleCol.offset = rollOffset;
 
@@ -167,7 +167,8 @@ public class specialMoves : MonoBehaviour
 
         if (!rolling)
         {
-            playerobj.localScale = new Vector2(playerobj.localScale.x, startRollYScale);
+           
+
             circleCol.radius = originalRadius;
             circleCol.offset = originalOffset;
         }

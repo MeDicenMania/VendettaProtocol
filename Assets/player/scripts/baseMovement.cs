@@ -18,7 +18,7 @@ public class movimiento : MonoBehaviour
 
     [SerializeField] private float wallJumpLockTime = 0.15f;
     [HideInInspector] public float wallJumpLockCounter;
-     public float recoilTime;
+    public float recoilTime;
     public float recoilDuration = 0.15f;
     private float recoilTimer;
 
@@ -31,14 +31,14 @@ public class movimiento : MonoBehaviour
     private GameObject spawn;
     private GameObject cops;
     private GameObject win;
-   [SerializeField] private Tutorial_GrapplingGun grapple;
+    [SerializeField] private Tutorial_GrapplingGun grapple;
     [Header("Variables")]
     private float defaultGravity;
-
+    private Animator anim;
     private float coyote = 0.12f;
     public float playerVelocity;
     private float jumpBufferTime = 0.12f;
-   //air Movement
+    //air Movement
     [SerializeField] private float accelAair;
     [SerializeField] private float deccAir;
 
@@ -46,11 +46,12 @@ public class movimiento : MonoBehaviour
     [SerializeField] private float fallmultiplier = 2.5f;
     [SerializeField] private float lowjumpmultiplier = 2f;
     [SerializeField] private float forceJump = 2.5f;
-    [HideInInspector] public  bool conserveMomentum = false;
+    [HideInInspector] public bool conserveMomentum = false;
 
     //Movimiento
     public bool isSpeeding;
     public float flipSpeed;
+    public bool isRunning;
     private float targetSpeed;
     private float accelRate;
     [SerializeField] private float baseSpeed = 13;
@@ -66,9 +67,9 @@ public class movimiento : MonoBehaviour
     private Vector2 dir;
     private Vector2 force;
     //Waljump 
-     public float wallforceJump;
+    public float wallforceJump;
 
-    public  Vector2 wallJumpForce;
+    public Vector2 wallJumpForce;
     private float lastWallJumpDir;
     private float slideSpeed = 2.5f;
     private int Dir;
@@ -78,19 +79,20 @@ public class movimiento : MonoBehaviour
     [HideInInspector] public bool isJumpFalling;
     [HideInInspector] public bool isJumpCut;
     [HideInInspector] public bool jump;
-     public bool isJumping;
+    public bool isJumping;
     [HideInInspector] public bool wallJumped;
-     public bool isWallJumping;
+    public bool isWallJumping;
     [HideInInspector] public bool isSliding;
     [HideInInspector] private bool isFacingRight = true;
     [HideInInspector] public bool isRecoiling;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         Climbing = GetComponent<Climbing>();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<colisiones>();
-       sm = GetComponent<specialMoves>();
+        sm = GetComponent<specialMoves>();
         spawn = GameObject.FindWithTag("spawn");
         cops = GameObject.FindWithTag("cops");
         GameObject enemyGO = GameObject.Find("enemy");
@@ -121,7 +123,7 @@ public class movimiento : MonoBehaviour
 
         Vector2 dir = new Vector2(moveInputx, moveInputy);
 
-        if(playerVelocity >13  || playerVelocity < -13)
+        if (playerVelocity > 13 || playerVelocity < -13)
         {
             isSpeeding = true;
         }
@@ -133,10 +135,10 @@ public class movimiento : MonoBehaviour
         //chequeos 
         if (coll.enPiso)
             LastOnGroundTime = coyote;
-        
+
         if (coll.onRightWall)
             LastOnWallRightTime = coyote;
-        
+
         if (coll.onLeftWall)
             LastOnWallLeftTime = coyote;
 
@@ -147,21 +149,21 @@ public class movimiento : MonoBehaviour
         }
 
         //colision piso
-        if ( (Input.GetKeyDown(KeyCode.Space)))
+        if ((Input.GetKeyDown(KeyCode.Space)))
         {
 
             LastPressedJumpTime = jumpBufferTime;
             isSliding = false;
-            
+
 
 
         }
         //colision paredes
-        if (coll.enPared && (coll.enPiso == false) && (Input.GetKeyDown(KeyCode.Space)) )
+        if (coll.enPared && (coll.enPiso == false) && (Input.GetKeyDown(KeyCode.Space)))
         {
             isSliding = false;
         }
-       
+
         HandleGravity();
 
         if (coll.enPiso || Climbing.isClimbing)
@@ -169,15 +171,15 @@ public class movimiento : MonoBehaviour
             wallJumpForce = new Vector2(10f, 10f);
             lastWallJumpDir = 0;
         }
-        
 
-        if (moveInputx >0 && !isFacingRight)
+
+        if (moveInputx > 0 && !isFacingRight)
         {
             Flip();
         }
         else if (moveInputx < 0 && isFacingRight)
         {
-            Flip(); 
+            Flip();
         }
         //jump cheks
 
@@ -185,13 +187,13 @@ public class movimiento : MonoBehaviour
         {
             isJumping = false;
         }
-       
+
         if (!isWallJumping)
         {
             isJumpFalling = true;
 
         }
-            
+
         if (isWallJumping && wallJumpStartTime > wallJumpTime)
         {
             isWallJumping = false;
@@ -200,11 +202,12 @@ public class movimiento : MonoBehaviour
         {
             isJumpFalling = false;
         }
-           
+
 
         if (CanJump() && LastPressedJumpTime > 0)
         {
             isJumping = true;
+
             isWallJumping = false;
             isJumpCut = false;
             isJumpFalling = false;
@@ -213,26 +216,27 @@ public class movimiento : MonoBehaviour
         // walljump cheks
         else if (CanWallJump() && LastPressedJumpTime > 0)
         {
-           
+
             isJumping = false;
+
             isJumpCut = false;
             isJumpFalling = false;
             wallJumpStartTime = Time.time;
 
-          
-           
 
-             Dir = coll.onRightWall ? -1 : 1; WallJump(Dir);
-            
+
+
+            Dir = coll.onRightWall ? -1 : 1; WallJump(Dir);
+
         }
         if (coll.enPared)
         {
             velocity = baseSpeed;
         }
 
-       
 
-       
+
+
         LastOnWallTime = Mathf.Max(LastOnWallLeftTime, LastOnWallRightTime);
 
         if (isRecoiling)
@@ -243,7 +247,7 @@ public class movimiento : MonoBehaviour
                 isRecoiling = false;
             }
         }
-
+        HandleAnimations();
 
     }
 
@@ -254,19 +258,19 @@ public class movimiento : MonoBehaviour
 
     void HandleGravity()
     {
-       
+
         if (isRecoiling)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * 2f * Time.deltaTime;
             return;
         }
 
-        
+
         if (rb.linearVelocity.y < 0)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallmultiplier - 1) * Time.deltaTime;
         }
-       
+
         else if (rb.linearVelocity.y > 0)
         {
             if (!Input.GetKey(KeyCode.Space))
@@ -281,7 +285,7 @@ public class movimiento : MonoBehaviour
 
     public void WallJump(int Dir)
     {
-       
+
         isWallJumping = true;
         LastPressedJumpTime = 0;
         LastOnGroundTime = 0;
@@ -297,7 +301,7 @@ public class movimiento : MonoBehaviour
 
         force.x *= Dir;
 
-        if( lastWallJumpDir == Dir)
+        if (lastWallJumpDir == Dir)
         {
             wallJumpForce.x = wallJumpForce.x / 2;
             wallJumpForce.y = wallJumpForce.y / 2;
@@ -322,27 +326,27 @@ public class movimiento : MonoBehaviour
         rb.AddForce(force * wallforceJump, ForceMode2D.Impulse);
         lastWallJumpDir = Dir;
     }
-    private  void TimewallJumping()
+    private void TimewallJumping()
     {
         isWallJumping = false;
     }
 
-    public void WallSlide() 
+    public void WallSlide()
     {
         isSliding = true;
 
         if (!isWallJumping)
         {
             //rb.AddForce(Vector2.up * (velocity), ForceMode2D.Force);
-                   if (coll.wallSide != moveInputx || moveInputx == 0)
+            if (coll.wallSide != moveInputx || moveInputx == 0)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, -slideSpeed);
 
             }
-           
-  
+
+
         }
-            
+
 
     }
     private void Jump()
@@ -354,33 +358,33 @@ public class movimiento : MonoBehaviour
         rb.AddForce(Vector2.up * forceJump, ForceMode2D.Impulse);
 
         isJumping = true;
-       
+        anim.SetBool("isJumping", true);
     }
-      
-    
+
+
     private void Run(float lerp)
     {
         //Debug.Log("running");
         isSliding = false;
 
-        if (CanRun() )
+        if (CanRun())
         {
-             targetSpeed = moveInputx * velocity;
+            targetSpeed = moveInputx * velocity;
 
             if (moveInputx != 0)
             {
                 velocity = Mathf.MoveTowards(velocity, maxVelocity, Time.deltaTime * speedBuildUp);
             }
-     
+
             targetSpeed = Mathf.Lerp(rb.linearVelocity.x, targetSpeed, lerp);
 
             float speedDiff = targetSpeed - rb.linearVelocity.x;
-          
+
 
             accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? runAccelAmount : runDecclAmount;
 
-            
-         
+
+
             movement = speedDiff * accelRate;
 
             if (LastOnGroundTime > 0)
@@ -396,9 +400,9 @@ public class movimiento : MonoBehaviour
             }
 
 
-            playerVelocity = rb.linearVelocity.x ;
+            playerVelocity = rb.linearVelocity.x;
         }
-       
+
         if (!coll.enPiso)
         {
             accelRate *= 0.5f; // menos control en aire
@@ -408,9 +412,9 @@ public class movimiento : MonoBehaviour
 
     private void Momemtum()
     {
-       
 
-          
+
+
     }
 
 
@@ -423,16 +427,13 @@ public class movimiento : MonoBehaviour
         }
     }
 
-    
+
     void Flip()
     {
-        //isFacingRight = !isFacingRight;
-        //transform.Rotate(0f, 180f, 0f);
-        //if(coll.enPiso && isSpeeding)
-        //{
-        //    rb.linearVelocity = new Vector2((flipSpeed) * moveInputx, rb.linearVelocity.y);
-        //}
-     
+        isFacingRight = !isFacingRight;
+        transform.Rotate(0f, 180f, 0f);
+
+
 
     }
     public bool CanJump()
@@ -453,30 +454,52 @@ public class movimiento : MonoBehaviour
     }
     public bool CanRun()
     {
-       if  (!isWallJumping && !sm.isSlideJumping && !grapple.isGrabing)
-        return true;
-            else 
-        return false;
+        if (!isWallJumping && !sm.isSlideJumping && !grapple.isGrabing)
+            return true;
+        else
+            return false;
     }
-    
-    
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
-            if (collision.gameObject.CompareTag("cops"))
+
+        if (collision.gameObject.CompareTag("cops"))
         {
             Respawn();
         }
-            if ( collision.gameObject.CompareTag("win"))
+        if (collision.gameObject.CompareTag("win"))
         {
             SceneManager.LoadScene("Main Menu");
         }
-        
+
+    }
+    void HandleAnimations()
+    {
+        // RUNNING
+        isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f && coll.enPiso && !isSliding;
+
+        anim.SetBool("isRunning", isRunning);
+
+        // SLIDING
+        anim.SetBool("isSliding", sm.rolling);
+
+        // IDLE
+        bool isIdle = Mathf.Abs(rb.linearVelocity.x) < 0.1f
+                      && coll.enPiso
+                      && !isSliding
+                      && !isJumping
+                      && !isWallJumping;
+
+        anim.SetBool("isIdle", isIdle);
+
+        // JUMPING (ya lo tenés pero lo dejamos consistente)
+        anim.SetBool("isJumping", isJumping);
     }
     private void Respawn()
     {
         //SceneManager.LoadScene("Main Menu");
         Debug.Log("perdiste jaja");
-    }    
+    }
 }
 

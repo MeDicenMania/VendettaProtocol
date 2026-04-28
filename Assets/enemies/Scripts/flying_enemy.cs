@@ -41,5 +41,6 @@ public class flying_enemy : MonoBehaviour
             collision.collider.GetComponent<vida_jugador>().tomardaño(4);
             
         }
+        
     }
 }

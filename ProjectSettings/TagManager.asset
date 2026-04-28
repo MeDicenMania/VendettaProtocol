@@ -9,6 +9,7 @@ TagManager:
   - win
   - grapplepoint
   - piso
+  - Enemigo
   layers:
   - Default
   - TransparentFX

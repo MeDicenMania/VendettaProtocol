@@ -1,0 +1,2197 @@
+fileFormatVersion: 2
+guid: d0c8d5b7ae40ee54a8c3aa83664273ea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3987491511624086091
+    second: PSX-SNES character template 1_0
+  - first:
+      213: 1237567380262315442
+    second: PSX-SNES character template 1_1
+  - first:
+      213: -350946118276437264
+    second: PSX-SNES character template 1_2
+  - first:
+      213: 2917271462371331201
+    second: PSX-SNES character template 1_3
+  - first:
+      213: 816266890459274618
+    second: PSX-SNES character template 1_4
+  - first:
+      213: -58336863331901046
+    second: PSX-SNES character template 1_5
+  - first:
+      213: -232808030368316472
+    second: PSX-SNES character template 1_6
+  - first:
+      213: -2468083134217374107
+    second: PSX-SNES character template 1_7
+  - first:
+      213: 2371657092588356706
+    second: PSX-SNES character template 1_8
+  - first:
+      213: 4227744326914183197
+    second: PSX-SNES character template 1_9
+  - first:
+      213: 2621501501637167535
+    second: PSX-SNES character template 1_10
+  - first:
+      213: -7303194411903645093
+    second: PSX-SNES character template 1_11
+  - first:
+      213: 2503937338761574002
+    second: PSX-SNES character template 1_12
+  - first:
+      213: 4746822535076047203
+    second: PSX-SNES character template 1_13
+  - first:
+      213: 8759893345065911158
+    second: PSX-SNES character template 1_14
+  - first:
+      213: 765317024175515850
+    second: PSX-SNES character template 1_15
+  - first:
+      213: 3757416516297510914
+    second: PSX-SNES character template 1_16
+  - first:
+      213: 6602412963649475310
+    second: PSX-SNES character template 1_17
+  - first:
+      213: -1813775157254170729
+    second: PSX-SNES character template 1_18
+  - first:
+      213: 851591801291382816
+    second: PSX-SNES character template 1_19
+  - first:
+      213: -7358747639086719535
+    second: PSX-SNES character template 1_20
+  - first:
+      213: -4627009744845406439
+    second: PSX-SNES character template 1_21
+  - first:
+      213: -6334743932303330957
+    second: PSX-SNES character template 1_22
+  - first:
+      213: -3601044988553050590
+    second: PSX-SNES character template 1_23
+  - first:
+      213: -6201791517723453994
+    second: PSX-SNES character template 1_24
+  - first:
+      213: -2144059247116406811
+    second: PSX-SNES character template 1_25
+  - first:
+      213: 6143134773512434546
+    second: PSX-SNES character template 1_26
+  - first:
+      213: 5281224563782388538
+    second: PSX-SNES character template 1_27
+  - first:
+      213: -7676516298438038214
+    second: PSX-SNES character template 1_28
+  - first:
+      213: -5518411522742696019
+    second: PSX-SNES character template 1_29
+  - first:
+      213: -3162238637767607002
+    second: PSX-SNES character template 1_30
+  - first:
+      213: 491567370237820004
+    second: PSX-SNES character template 1_31
+  - first:
+      213: 1110122615672461300
+    second: PSX-SNES character template 1_32
+  - first:
+      213: -7812195468258076753
+    second: PSX-SNES character template 1_33
+  - first:
+      213: -8040995297287226921
+    second: PSX-SNES character template 1_34
+  - first:
+      213: 8883234269490971244
+    second: PSX-SNES character template 1_35
+  - first:
+      213: 7786044982710790697
+    second: PSX-SNES character template 1_36
+  - first:
+      213: -1015210768805019532
+    second: PSX-SNES character template 1_37
+  - first:
+      213: -5107991858782959898
+    second: PSX-SNES character template 1_38
+  - first:
+      213: 6367342157831871170
+    second: PSX-SNES character template 1_39
+  - first:
+      213: -600689592635001436
+    second: PSX-SNES character template 1_40
+  - first:
+      213: -7988319593348106193
+    second: PSX-SNES character template 1_41
+  - first:
+      213: -862500957800860470
+    second: PSX-SNES character template 1_42
+  - first:
+      213: 8884981189220254232
+    second: PSX-SNES character template 1_43
+  - first:
+      213: -3998326766373796814
+    second: PSX-SNES character template 1_44
+  - first:
+      213: -7582619738644771249
+    second: PSX-SNES character template 1_45
+  - first:
+      213: 5184459914288973979
+    second: PSX-SNES character template 1_46
+  - first:
+      213: 1096175998050465562
+    second: PSX-SNES character template 1_47
+  - first:
+      213: -661099174835531005
+    second: PSX-SNES character template 1_48
+  - first:
+      213: 984797921952266978
+    second: PSX-SNES character template 1_49
+  - first:
+      213: 796382615824921143
+    second: PSX-SNES character template 1_50
+  - first:
+      213: 8664541732723112387
+    second: PSX-SNES character template 1_51
+  - first:
+      213: 4689081511472031088
+    second: PSX-SNES character template 1_52
+  - first:
+      213: -4132913787672347081
+    second: PSX-SNES character template 1_53
+  - first:
+      213: 5027671295626775169
+    second: PSX-SNES character template 1_54
+  - first:
+      213: 439884226443557092
+    second: PSX-SNES character template 1_55
+  - first:
+      213: 7639983938321686173
+    second: PSX-SNES character template 1_56
+  - first:
+      213: 5034159078653303085
+    second: PSX-SNES character template 1_57
+  - first:
+      213: 2777222442861559044
+    second: PSX-SNES character template 1_58
+  - first:
+      213: 2166456462314787074
+    second: PSX-SNES character template 1_59
+  - first:
+      213: 5595487028773267369
+    second: PSX-SNES character template 1_60
+  - first:
+      213: -752140626657294223
+    second: PSX-SNES character template 1_61
+  - first:
+      213: 6566288854365532706
+    second: PSX-SNES character template 1_62
+  - first:
+      213: -279689832606660371
+    second: PSX-SNES character template 1_63
+  - first:
+      213: 3003785104327871461
+    second: PSX-SNES character template 1_64
+  - first:
+      213: -4551195259644836189
+    second: PSX-SNES character template 1_65
+  - first:
+      213: 6029928233029155031
+    second: PSX-SNES character template 1_66
+  - first:
+      213: -8570609119507864919
+    second: PSX-SNES character template 1_67
+  - first:
+      213: 4995662926041131457
+    second: PSX-SNES character template 1_68
+  - first:
+      213: 2654718770627116428
+    second: PSX-SNES character template 1_69
+  - first:
+      213: 4657408647371434220
+    second: PSX-SNES character template 1_70
+  - first:
+      213: 25133474109329162
+    second: PSX-SNES character template 1_71
+  - first:
+      213: -100410839933110167
+    second: PSX-SNES character template 1_72
+  - first:
+      213: -23481881229595240
+    second: PSX-SNES character template 1_73
+  - first:
+      213: 2446183063283906808
+    second: PSX-SNES character template 1_74
+  - first:
+      213: 6460837968737016569
+    second: PSX-SNES character template 1_75
+  - first:
+      213: -6204230246432050696
+    second: PSX-SNES character template 1_76
+  - first:
+      213: 7741064579841980889
+    second: PSX-SNES character template 1_77
+  - first:
+      213: -2406048130690138918
+    second: PSX-SNES character template 1_78
+  - first:
+      213: -1742336397133611829
+    second: PSX-SNES character template 1_79
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 707
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdc2c8c89599a8c0800000000000000
+      internalID: -3987491511624086091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 707
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b56526b9f8bc2110800000000000000
+      internalID: 1237567380262315442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 707
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0faa4d46d50312bf0800000000000000
+      internalID: -350946118276437264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_3
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 707
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c070c40fa3c7820800000000000000
+      internalID: 2917271462371331201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_4
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 707
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ddcbf7966f35b00800000000000000
+      internalID: 816266890459274618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_5
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 707
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81aacf8eeeb03ff0800000000000000
+      internalID: -58336863331901046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_6
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 707
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3c9017456e4ccf0800000000000000
+      internalID: -232808030368316472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_7
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 707
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56637d4477b9fbdd0800000000000000
+      internalID: -2468083134217374107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_8
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 707
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264c3c46f81d9e020800000000000000
+      internalID: 2371657092588356706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_9
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 621
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1094e6d017fbaa30800000000000000
+      internalID: 4227744326914183197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_10
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 621
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa98c37f9b1716420800000000000000
+      internalID: 2621501501637167535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_11
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 618
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a8dd85067d5aa90800000000000000
+      internalID: -7303194411903645093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_12
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 619
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27678b04eb5cfb220800000000000000
+      internalID: 2503937338761574002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 622
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369e60722f910e140800000000000000
+      internalID: 4746822535076047203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_14
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 622
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67346fed594619970800000000000000
+      internalID: 8759893345065911158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_15
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 621
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac86a8657c3fe9a00800000000000000
+      internalID: 765317024175515850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_16
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 619
+        width: 25
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2005917f966052430800000000000000
+      internalID: 3757416516297510914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_17
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 621
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2d2cefb9b70ab50800000000000000
+      internalID: 6602412963649475310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 535
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 797df61ba1d24d6e0800000000000000
+      internalID: -1813775157254170729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_19
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 535
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 020ab993b3671db00800000000000000
+      internalID: 851591801291382816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_20
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 535
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dddd74b20a70e990800000000000000
+      internalID: -7358747639086719535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_21
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 535
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ff73ae62f89cfb0800000000000000
+      internalID: -4627009744845406439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_22
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 535
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371bffbd4f77618a0800000000000000
+      internalID: -6334743932303330957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_23
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 535
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226481d79a4860ec0800000000000000
+      internalID: -3601044988553050590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_24
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 535
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5101f197fcee9a0800000000000000
+      internalID: -6201791517723453994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_25
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 535
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef2c367975ce32e0800000000000000
+      internalID: -2144059247116406811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_26
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 535
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273fe8e578cc04550800000000000000
+      internalID: 6143134773512434546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_27
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 449
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b015772cdaa4940800000000000000
+      internalID: 5281224563782388538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_28
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 449
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3daa173919877590800000000000000
+      internalID: -7676516298438038214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_29
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 449
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7cf7635f9aa63b0800000000000000
+      internalID: -5518411522742696019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_30
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 449
+        width: 53
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62db8d496b87d14d0800000000000000
+      internalID: -3162238637767607002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_31
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 447
+        width: 57
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46cb2363be562d600800000000000000
+      internalID: 491567370237820004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_32
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 449
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7d84423a2f76f00800000000000000
+      internalID: 1110122615672461300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_33
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 449
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa79f86cc91859390800000000000000
+      internalID: -7812195468258076753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_34
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 439
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9bb905165a86090800000000000000
+      internalID: -8040995297287226921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_35
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 449
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c620691b086974b70800000000000000
+      internalID: 8883234269490971244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_36
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 363
+        width: 33
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a60b7d8a69d0c60800000000000000
+      internalID: 7786044982710790697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_37
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 363
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 470c9314f2f39e1f0800000000000000
+      internalID: -1015210768805019532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_38
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 363
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e687adb774cc19b0800000000000000
+      internalID: -5107991858782959898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_39
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 363
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca10f8f4f75d5850800000000000000
+      internalID: 6367342157831871170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_40
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 363
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a577b28ffbe9a7f0800000000000000
+      internalID: -600689592635001436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_41
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 363
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28713e57a9c32190800000000000000
+      internalID: -7988319593348106193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_42
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 363
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac478d7d2f7c704f0800000000000000
+      internalID: -862500957800860470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_43
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 363
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8124083215bcd4b70800000000000000
+      internalID: 8884981189220254232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_44
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 363
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2348a527df61388c0800000000000000
+      internalID: -3998326766373796814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_45
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 277
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e863ba58f15c690800000000000000
+      internalID: -7582619738644771249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_46
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 277
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b984277d2d6e2f740800000000000000
+      internalID: 5184459914288973979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_47
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 277
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a177b1f2346663f00800000000000000
+      internalID: 1096175998050465562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_48
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 277
+        width: 45
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303df9a9dcd43d6f0800000000000000
+      internalID: -661099174835531005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_49
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 277
+        width: 45
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eaf1890e74baad00800000000000000
+      internalID: 984797921952266978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_50
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 275
+        width: 46
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7327a8905c15d0b00800000000000000
+      internalID: 796382615824921143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_51
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 277
+        width: 45
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c932889cc2ae3870800000000000000
+      internalID: 8664541732723112387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_52
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 275
+        width: 46
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07564267ac6f21140800000000000000
+      internalID: 4689081511472031088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_53
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 276
+        width: 46
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73eb976aec0f4a6c0800000000000000
+      internalID: -4132913787672347081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_54
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 191
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a0347d760e5c540800000000000000
+      internalID: 5027671295626775169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_55
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 191
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e837739f58ca1600800000000000000
+      internalID: 439884226443557092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_56
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 191
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e9a5dd9eca60a60800000000000000
+      internalID: 7639983938321686173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_57
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 191
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2910f9820decd540800000000000000
+      internalID: 5034159078653303085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_58
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 191
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d7101f81daa8620800000000000000
+      internalID: 2777222442861559044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_59
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 191
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2015f919cacc01e10800000000000000
+      internalID: 2166456462314787074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_60
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 191
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a726577ec927ad40800000000000000
+      internalID: 5595487028773267369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_61
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 188
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178c3f6c51cdf85f0800000000000000
+      internalID: -752140626657294223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_62
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 189
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22270116ce4202b50800000000000000
+      internalID: 6566288854365532706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_63
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 106
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8013044975e1cf0800000000000000
+      internalID: -279689832606660371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_64
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 106
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb821d33a69fa920800000000000000
+      internalID: 3003785104327871461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_65
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 105
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a68d6d4608e6d0c0800000000000000
+      internalID: -4551195259644836189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_66
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 103
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d83dcea7cb9ea350800000000000000
+      internalID: 6029928233029155031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_67
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 105
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a2a2033a641f0980800000000000000
+      internalID: -8570609119507864919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_68
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 105
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9254c86f8245540800000000000000
+      internalID: 4995662926041131457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_69
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 105
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d7ac518a477d420800000000000000
+      internalID: 2654718770627116428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_70
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 105
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce828602d7072a040800000000000000
+      internalID: 4657408647371434220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_71
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 105
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f0244f2ca495000800000000000000
+      internalID: 25133474109329162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_72
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 19
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96830328fd44b9ef0800000000000000
+      internalID: -100410839933110167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_73
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 19
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89de6aa7a539caff0800000000000000
+      internalID: -23481881229595240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_74
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 19
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f83d9e198692f120800000000000000
+      internalID: 2446183063283906808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_75
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 19
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa1dedc6e189a950800000000000000
+      internalID: 6460837968737016569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_76
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 19
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1fea8567526e9a0800000000000000
+      internalID: -6204230246432050696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_77
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 19
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9f6d0b839cd6b60800000000000000
+      internalID: 7741064579841980889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_78
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 19
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adcb8b119fffb9ed0800000000000000
+      internalID: -2406048130690138918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSX-SNES character template 1_79
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 0
+        width: 75
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccfd91374af1d7e0800000000000000
+      internalID: -1742336397133611829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PSX-SNES character template 1_0: -3987491511624086091
+      PSX-SNES character template 1_1: 1237567380262315442
+      PSX-SNES character template 1_10: 2621501501637167535
+      PSX-SNES character template 1_11: -7303194411903645093
+      PSX-SNES character template 1_12: 2503937338761574002
+      PSX-SNES character template 1_13: 4746822535076047203
+      PSX-SNES character template 1_14: 8759893345065911158
+      PSX-SNES character template 1_15: 765317024175515850
+      PSX-SNES character template 1_16: 3757416516297510914
+      PSX-SNES character template 1_17: 6602412963649475310
+      PSX-SNES character template 1_18: -1813775157254170729
+      PSX-SNES character template 1_19: 851591801291382816
+      PSX-SNES character template 1_2: -350946118276437264
+      PSX-SNES character template 1_20: -7358747639086719535
+      PSX-SNES character template 1_21: -4627009744845406439
+      PSX-SNES character template 1_22: -6334743932303330957
+      PSX-SNES character template 1_23: -3601044988553050590
+      PSX-SNES character template 1_24: -6201791517723453994
+      PSX-SNES character template 1_25: -2144059247116406811
+      PSX-SNES character template 1_26: 6143134773512434546
+      PSX-SNES character template 1_27: 5281224563782388538
+      PSX-SNES character template 1_28: -7676516298438038214
+      PSX-SNES character template 1_29: -5518411522742696019
+      PSX-SNES character template 1_3: 2917271462371331201
+      PSX-SNES character template 1_30: -3162238637767607002
+      PSX-SNES character template 1_31: 491567370237820004
+      PSX-SNES character template 1_32: 1110122615672461300
+      PSX-SNES character template 1_33: -7812195468258076753
+      PSX-SNES character template 1_34: -8040995297287226921
+      PSX-SNES character template 1_35: 8883234269490971244
+      PSX-SNES character template 1_36: 7786044982710790697
+      PSX-SNES character template 1_37: -1015210768805019532
+      PSX-SNES character template 1_38: -5107991858782959898
+      PSX-SNES character template 1_39: 6367342157831871170
+      PSX-SNES character template 1_4: 816266890459274618
+      PSX-SNES character template 1_40: -600689592635001436
+      PSX-SNES character template 1_41: -7988319593348106193
+      PSX-SNES character template 1_42: -862500957800860470
+      PSX-SNES character template 1_43: 8884981189220254232
+      PSX-SNES character template 1_44: -3998326766373796814
+      PSX-SNES character template 1_45: -7582619738644771249
+      PSX-SNES character template 1_46: 5184459914288973979
+      PSX-SNES character template 1_47: 1096175998050465562
+      PSX-SNES character template 1_48: -661099174835531005
+      PSX-SNES character template 1_49: 984797921952266978
+      PSX-SNES character template 1_5: -58336863331901046
+      PSX-SNES character template 1_50: 796382615824921143
+      PSX-SNES character template 1_51: 8664541732723112387
+      PSX-SNES character template 1_52: 4689081511472031088
+      PSX-SNES character template 1_53: -4132913787672347081
+      PSX-SNES character template 1_54: 5027671295626775169
+      PSX-SNES character template 1_55: 439884226443557092
+      PSX-SNES character template 1_56: 7639983938321686173
+      PSX-SNES character template 1_57: 5034159078653303085
+      PSX-SNES character template 1_58: 2777222442861559044
+      PSX-SNES character template 1_59: 2166456462314787074
+      PSX-SNES character template 1_6: -232808030368316472
+      PSX-SNES character template 1_60: 5595487028773267369
+      PSX-SNES character template 1_61: -752140626657294223
+      PSX-SNES character template 1_62: 6566288854365532706
+      PSX-SNES character template 1_63: -279689832606660371
+      PSX-SNES character template 1_64: 3003785104327871461
+      PSX-SNES character template 1_65: -4551195259644836189
+      PSX-SNES character template 1_66: 6029928233029155031
+      PSX-SNES character template 1_67: -8570609119507864919
+      PSX-SNES character template 1_68: 4995662926041131457
+      PSX-SNES character template 1_69: 2654718770627116428
+      PSX-SNES character template 1_7: -2468083134217374107
+      PSX-SNES character template 1_70: 4657408647371434220
+      PSX-SNES character template 1_71: 25133474109329162
+      PSX-SNES character template 1_72: -100410839933110167
+      PSX-SNES character template 1_73: -23481881229595240
+      PSX-SNES character template 1_74: 2446183063283906808
+      PSX-SNES character template 1_75: 6460837968737016569
+      PSX-SNES character template 1_76: -6204230246432050696
+      PSX-SNES character template 1_77: 7741064579841980889
+      PSX-SNES character template 1_78: -2406048130690138918
+      PSX-SNES character template 1_79: -1742336397133611829
+      PSX-SNES character template 1_8: 2371657092588356706
+      PSX-SNES character template 1_9: 4227744326914183197
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

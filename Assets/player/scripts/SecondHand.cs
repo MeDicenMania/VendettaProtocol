@@ -6,7 +6,7 @@ public class Suction : MonoBehaviour
     [Header("Scripts Ref:")]
     public movimiento mov;
     public colisiones coll;
-
+    public AmmoHUD ammoHUD;
 
     [Header("Partes")]
     public Camera m_camera;
@@ -26,7 +26,7 @@ public class Suction : MonoBehaviour
     [SerializeField] private float gunForce;
     [SerializeField] Vector2 mousePos;
  
-    private int bullets;
+    public int bullets;
     [SerializeField] private float bulletForce = 10f;
     [SerializeField] private float shootCooldown = 0.5f;
     [SerializeField] private int pellets = 3; 
@@ -43,6 +43,7 @@ public class Suction : MonoBehaviour
     void Start()
     {
         bullets = 3;
+        ammoHUD.UpdateHUD(bullets);
     }
 
     // Update is called once per frame
@@ -59,6 +60,7 @@ public class Suction : MonoBehaviour
         if (coll.enPiso)
         {
             bullets = 3;
+            ammoHUD.UpdateHUD(bullets);
         }
 
         if (canShoot() && Input.GetMouseButtonDown(1))
@@ -73,7 +75,7 @@ public class Suction : MonoBehaviour
     {
         shootCd = shootCooldown;
         bullets--;
-
+        ammoHUD.UpdateHUD(bullets);
         mov.recoilTime = mov.recoilDuration;
         mov.isRecoiling = true;
         mov.StartRecoil();
@@ -120,7 +122,10 @@ public class Suction : MonoBehaviour
 
             float angle = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
             bala.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
         }
+
     }
 
 

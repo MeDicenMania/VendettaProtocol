@@ -2,37 +2,25 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    public float speed = 10f;
-    private Vector2 direction;
+    private Vector2 direccion;
+    public float tiempoVida = 3f;
 
-
-
-    private Rigidbody2D rb;
-
-    void Awake()
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, tiempoVida);
     }
 
     public void SetDirection(Vector2 dir)
     {
-        rb.linearVelocity = dir * speed;
+        direccion = dir;
     }
 
-    
-
-    
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (collision.gameObject.CompareTag("piso"))
+        if (other.CompareTag("Enemigo"))
         {
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
-       
     }
-
-
-
 }

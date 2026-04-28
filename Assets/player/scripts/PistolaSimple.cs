@@ -10,46 +10,43 @@ public class PistolaSimple : MonoBehaviour
     public ParticleSystem particulas;
 
     [Header("Disparo")]
-    [SerializeField] private float fuerzaBala = 10f;
+    [SerializeField] private float fuerzaBala = 30f;
     [SerializeField] private float cooldownDisparo = 0.2f;
+    [SerializeField] private int balasMax = 20;
 
+    private int balasActuales;
     private Vector2 posicionMouse;
     private float tiempoDisparo;
 
+    void Start()
+    {
+        balasActuales = balasMax;
+    }
+
     void Update()
     {
+        if (!enabled) return;
         posicionMouse = camara.ScreenToWorldPoint(Input.mousePosition);
         tiempoDisparo -= Time.deltaTime;
-
         RotarArma(posicionMouse);
         ControlParticulas();
-
         if (PuedeDisparar() && Input.GetKeyDown(KeyCode.Mouse0))
-        {
             Disparar();
-        }
     }
 
     public void Disparar()
     {
         tiempoDisparo = cooldownDisparo;
-
+        balasActuales--;
+        Debug.Log("Balas restantes: " + balasActuales);
         Vector2 direccion = (posicionMouse - (Vector2)puntoDisparo.position).normalized;
-
         GameObject bala = Instantiate(prefabBala, puntoDisparo.position, Quaternion.identity);
-
         Bala scriptBala = bala.GetComponent<Bala>();
         if (scriptBala != null)
-        {
             scriptBala.SetDirection(direccion);
-        }
-
         Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
         if (rbBala != null)
-        {
             rbBala.AddForce(direccion * fuerzaBala, ForceMode2D.Impulse);
-        }
-
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
         bala.transform.rotation = Quaternion.AngleAxis(angulo, Vector3.forward);
     }
@@ -57,16 +54,13 @@ public class PistolaSimple : MonoBehaviour
     public void ControlParticulas()
     {
         if (particulas == null) return;
-
-        if (Input.GetMouseButton(1 ))
+        if (Input.GetMouseButton(1))
         {
-            if (!particulas.isPlaying)
-                particulas.Play();
+            if (!particulas.isPlaying) particulas.Play();
         }
         else
         {
-            if (particulas.isPlaying)
-                particulas.Stop();
+            if (particulas.isPlaying) particulas.Stop();
         }
     }
 
@@ -79,6 +73,6 @@ public class PistolaSimple : MonoBehaviour
 
     public bool PuedeDisparar()
     {
-        return tiempoDisparo <= 0;
+        return tiempoDisparo <= 0 && balasActuales > 0;
     }
 }
