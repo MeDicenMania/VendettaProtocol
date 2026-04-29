@@ -29,4 +29,14 @@ public class Enemy : MonoBehaviour
         // CLAVE: usa la dirección de la mira
         rb.linearVelocity = -firePoint.right * velocidadBala;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.GetComponent<vida_jugador>())
+        {
+            collision.collider.GetComponent<vida_jugador>().tomardaño(4);
+
+        }
+
+    }
 }
