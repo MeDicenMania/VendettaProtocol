@@ -1144,7 +1144,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.37313, y: 22.928322, z: -9.64}
+  m_LocalPosition: {x: -49.373146, y: 22.927822, z: -9.64}
   m_LocalScale: {x: 1.5620662, y: 1.8613405, z: 1.1679}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71341,7 +71341,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107299527}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -71368,7 +71368,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0049960613, y: -1.0185074}
+  m_Offset: {x: 0.0049960613, y: -1.2287208}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -71378,7 +71378,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8702023, y: 0.48613566}
+  m_Size: {x: 1.8702023, y: 0.073354006}
   m_EdgeRadius: 0
 --- !u!1 &1113755572
 GameObject:
@@ -122660,6 +122660,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: 2eccb27dac500f14ca21f5d8e4d8f37e, type: 3}
@@ -122701,6 +122705,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: ecd9b9dbb9b020340bbab582fd6664a6, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 21300000, guid: 560a396da6575f5478c909877569bfbb, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -124111,7 +124119,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 1
   m_CompositeOrder: 0
-  m_Offset: {x: 238.38075, y: 1.3269496}
+  m_Offset: {x: 282.1292, y: 1.3269496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -124121,7 +124129,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 356.94412, y: 14.414956}
+  m_Size: {x: 444.44116, y: 14.414956}
   m_EdgeRadius: 0
 --- !u!66 &1506536252
 CompositeCollider2D:
@@ -124164,20 +124172,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1506536251}
     m_ColliderPaths:
-    - - X: 4168528128
+    - - X: 5043497984
         Y: 85344280
-      - X: 599086912
+      - X: 599086272
         Y: 85344280
-      - X: 599086912
+      - X: 599086272
         Y: -58805284
-      - X: 4168528128
+      - X: 5043497984
         Y: -58805284
   m_CompositePaths:
     m_Paths:
-    - - {x: 416.85278, y: -5.8805285}
-      - {x: 416.85278, y: 8.534428}
-      - {x: 59.90869, y: 8.534398}
-      - {x: 59.908726, y: -5.8805285}
+    - - {x: 504.34976, y: -5.8805285}
+      - {x: 504.34976, y: 8.534428}
+      - {x: 59.908627, y: 8.534398}
+      - {x: 59.90866, y: -5.8805285}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0

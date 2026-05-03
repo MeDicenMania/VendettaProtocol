@@ -40,6 +40,7 @@ public class specialMoves : MonoBehaviour
     private bool maintainRollVelocity = false;
     private bool wasGrounded;
     private CircleCollider2D circleCol;
+    private BoxCollider2D boxColl;
     private Vector2 force;
     [SerializeField] private float slidejumpForce;
     [SerializeField] private Vector2 slidejump;
@@ -52,6 +53,10 @@ public class specialMoves : MonoBehaviour
 
     public bool isSlideJumping;
 
+    private Vector2 originalBoxOffset;
+    private Vector2 originalBoxSize;
+
+
     void Start()
     {
         mov = GetComponent<movimiento>();
@@ -60,9 +65,13 @@ public class specialMoves : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         startRollYScale = playerobj.localScale.y;
         circleCol = GetComponent<CircleCollider2D>();
-
+        boxColl = GetComponent<BoxCollider2D>();
         originalRadius = circleCol.radius;
         originalOffset = circleCol.offset;
+
+        originalBoxOffset = boxColl.offset;
+        originalBoxSize = boxColl.size;
+
     }
 
 
@@ -129,13 +138,21 @@ public class specialMoves : MonoBehaviour
     private void startRoll()
     {
         Debug.Log("rolling");
-  
-             
+
+
         //if (rolling) return;
-      
-       
-        circleCol.radius = rollRadius;
-        circleCol.offset = rollOffset;
+
+
+        //circleCol.radius = rollRadius;
+        //circleCol.offset = rollOffset;
+        circleCol.enabled = false;
+        boxColl.enabled = true;
+
+
+        boxColl.offset = new Vector2(0.00499606133f, -0.71f); 
+        boxColl.size = new Vector2(1.8702023f, 0.0733540058f);
+
+
 
         if (coll.enPiso)
         {
@@ -167,10 +184,12 @@ public class specialMoves : MonoBehaviour
 
         if (!rolling)
         {
-           
 
-            circleCol.radius = originalRadius;
-            circleCol.offset = originalOffset;
+            circleCol.enabled = true;
+boxColl.enabled = false;
+
+boxColl.offset = originalBoxOffset;
+boxColl.size = originalBoxSize;
         }
 
     }
