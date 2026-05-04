@@ -23,12 +23,22 @@ public class Tutorial_GrapplingGun : MonoBehaviour
     public float maxDistnace = 10f;
     public float minDistance = 0.5f;
 
-    [Header("Dash")]
-    [SerializeField] private float dashSpeed = 20f;
-    [SerializeField] private float dashTime = 0.5f;
-    private float dashTimer;
-    public bool isDashing = false;
-    private Vector2 dashTarget;
+    [Header("Swing")]
+    [SerializeField] private float swingForce = 4.5f;
+    [SerializeField] private float swingForceScale = 0.5f;
+    [SerializeField] private float maxSwingForce = 12f;
+    [SerializeField] private float launchForce = 10f;
+    [SerializeField] private float ropeShortSpeed = 2f;
+    [SerializeField] private float ropeLenghSpeed = 2f;
+    [SerializeField] private float minRopeLength = 1f;
+    [SerializeField] private float maxExitSpeed = 12f;
+    private float currentRopeLength;
+
+    [Header("Ground Pull")]
+    [SerializeField] private float groundPullMaxDistance = 8f;
+    [SerializeField] private float groundPullForce = 15f;
+    [SerializeField] private float groundPullStopDistance = 1.5f;
+    private bool isPulling = false;
 
     [Header("Obstacle")]
     [SerializeField] private LayerMask obstacleMask;
@@ -37,11 +47,15 @@ public class Tutorial_GrapplingGun : MonoBehaviour
     [Header("Grapple")]
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 grappleDistanceVector;
-
     public bool isGrabing;
-    public Vector2 forceJump;
-    public float forceGrab;
-    [SerializeField] private int exitGrabSide;
+
+    // guardamos si estuvo en piso en los últimos frames
+    private bool wasOnGroundRecently = false;
+    private float groundCoyoteTime = 0.15f; // margen de tiempo
+    private float groundTimer = 0f;
+
+    // ─── Lifecycle ────────────────────────────────────────────────────────────
+
     private void Start()
     {
         grappleRope.enabled = false;
@@ -50,97 +64,104 @@ public class Tutorial_GrapplingGun : MonoBehaviour
 
     private void Update()
     {
-       
+        // Coyote time para enPiso
+        if (coll.enPiso)
+        {
+            groundTimer = groundCoyoteTime;
+            wasOnGroundRecently = true;
+        }
+        else
+        {
+            groundTimer -= Time.deltaTime;
+            if (groundTimer <= 0f)
+                wasOnGroundRecently = false;
+        }
+
         ActualizarRaycastObstaculo();
+
         if (Input.GetKeyDown(KeyCode.E) && !hayObstaculo)
-        {
             SetGrapplePoint();
-        }
 
-   
-        if (isDashing)
-        {
-            float dist = Vector2.Distance(rb.position, dashTarget);
-
-            if (dist <= minDistance)
-            {
-                StopDash();
-            }
-        }
-
-        if ((Input.GetKeyDown(KeyCode.D)))
-        {
-            exitGrabSide = 1;
-        }
-        if ((Input.GetKeyDown(KeyCode.A)))
-        {
-            exitGrabSide = -1;
-        }
-
+        if (Input.GetKeyUp(KeyCode.E) && isGrabing)
+            ReleaseGrapple();
 
         if (isGrabing)
         {
+            if (isPulling)
+            {
+                float dist = Vector2.Distance(rb.position, grapplePoint);
+
+                if (dist <= groundPullStopDistance)
+                {
+                    isPulling = false;
+                    rb.gravityScale = 3f;
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+                }
+                else
+                {
+                    Vector2 dir = (grapplePoint - rb.position).normalized;
+                    rb.AddForce(dir * groundPullForce, ForceMode2D.Force);
+                }
+            }
+            else
+            {
+                HandleSwingInput();
+            }
+
             if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Vector2 jump = new Vector2(forceJump.x, forceJump.y);
-
-                // aplicar dirección UNA sola vez
-                jump.x *= exitGrabSide;
-
-                // corregir momentum
-                if (Mathf.Sign(rb.linearVelocity.x) != Mathf.Sign(jump.x))
-                {
-                    jump.x -= rb.linearVelocity.x;
-                }
-                if (rb.linearVelocity.y < 0)
-                {
-                    jump.y -= rb.linearVelocity.y;
-                }
-
-                // aplicar fuerza
-                rb.AddForce(jump * forceGrab, ForceMode2D.Impulse);
-
-                ExitGrab();
-            }
+                LaunchFromSwing();
         }
-     
-        if (hayObstaculo)
-        {
+
+        if (hayObstaculo && isGrabing)
             CancelGrapple();
-        }
     }
 
-    private void FixedUpdate()
+    // ─── Swing input ──────────────────────────────────────────────────────────
+
+    private void HandleSwingInput()
     {
-        if (isDashing)
+        float speed = rb.linearVelocity.magnitude;
+        float forceMagnitude = Mathf.Clamp(swingForce + speed * swingForceScale, swingForce, maxSwingForce);
+
+        if (Input.GetKey(KeyCode.D))
+            rb.AddForce(Vector2.right * forceMagnitude, ForceMode2D.Force);
+
+        if (Input.GetKey(KeyCode.A))
+            rb.AddForce(Vector2.left * forceMagnitude, ForceMode2D.Force);
+
+        if (Input.GetKey(KeyCode.W))
         {
-            dashTimer -= Time.fixedDeltaTime;
+            currentRopeLength = Mathf.Max(minRopeLength,
+                currentRopeLength - ropeShortSpeed * Time.deltaTime);
+            m_springJoint2D.distance = currentRopeLength;
+        }
 
-            Vector2 dir = (dashTarget - rb.position);
-            float dist = dir.magnitude;
-
-            if (dist <= minDistance)
-            {
-                StopDash();
-                isGrabing = true;
-                return;
-            }
-
-            dir.Normalize();
-
-        
-            rb.MovePosition(rb.position + dir * dashSpeed * Time.fixedDeltaTime);
-
-            if (dashTimer <= 0f)
-            {
-                StopDash();
-            }
+        if (Input.GetKey(KeyCode.S))
+        {
+            currentRopeLength += ropeLenghSpeed * Time.deltaTime;
+            m_springJoint2D.distance = currentRopeLength;
         }
     }
 
-   
+    // ─── Launch (Space mientras cuelga) ───────────────────────────────────────
 
-    public  void SetGrapplePoint()
+    private void LaunchFromSwing()
+    {
+        Vector2 launchDir = rb.linearVelocity.normalized;
+
+        if (launchDir.sqrMagnitude < 0.1f)
+            launchDir = Vector2.up;
+
+        launchDir = (launchDir + Vector2.up * 0.5f).normalized;
+
+        rb.AddForce(launchDir * launchForce, ForceMode2D.Impulse);
+
+        ExitGrab();
+    }
+
+    // ─── Grapple point ────────────────────────────────────────────────────────
+
+    public void SetGrapplePoint()
     {
         Transform nearestPoint = GetNearestGrapplePoint(firePoint.position);
 
@@ -148,51 +169,81 @@ public class Tutorial_GrapplingGun : MonoBehaviour
         {
             grapplePoint = nearestPoint.position;
             grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
-
-            grappleRope.enabled = true;
-
-            StartDash();
+            AttachSwing();
         }
         else
         {
             Debug.Log("No hay punto de agarre");
         }
     }
-    private void ExitGrab()
+
+    // ─── Swing attach / detach ────────────────────────────────────────────────
+
+    void AttachSwing()
+    {
+        grappleRope.enabled = true;
+
+        currentRopeLength = Vector2.Distance(rb.position, grapplePoint);
+
+        m_springJoint2D.enabled = true;
+        m_springJoint2D.connectedAnchor = grapplePoint;
+        m_springJoint2D.distance = currentRopeLength;
+        m_springJoint2D.frequency = 0f;
+        m_springJoint2D.dampingRatio = 0f;
+        m_springJoint2D.enableCollision = true;
+
+        rb.gravityScale = 3f;
+        isGrabing = true;
+
+        float distToPoint = Vector2.Distance(rb.position, grapplePoint);
+
+        // Usar wasOnGroundRecently en vez de coll.enPiso directo
+        if (wasOnGroundRecently && distToPoint <= groundPullMaxDistance)
+        {
+            isPulling = true;
+            rb.gravityScale = 0f;
+        }
+        else
+        {
+            isPulling = false;
+        }
+    }
+
+    void ExitGrab()
     {
         isGrabing = false;
-
-        rb.gravityScale = 3;
-    }
-
-    void StartDash()
-    {
-        isDashing = true;
-        dashTimer = dashTime;
-
-        dashTarget = grapplePoint;
-
-        rb.gravityScale = 0f; 
-    }
-
-    void StopDash()
-    {
-        isDashing = false;
+        isPulling = false;
+        m_springJoint2D.enabled = false;
         grappleRope.enabled = false;
+        rb.gravityScale = 3f;
+        grapplePoint = Vector2.zero;
 
-        isGrabing = true;
-        rb.gravityScale = 0;
-        rb.linearVelocity = Vector2.zero;
+        if (rb.linearVelocity.magnitude > maxExitSpeed)
+            rb.linearVelocity = rb.linearVelocity.normalized * maxExitSpeed;
+    }
+
+    void ReleaseGrapple()
+    {
+        ExitGrab();
     }
 
     void CancelGrapple()
     {
-        isDashing = false;
+        isGrabing = false;
+        isPulling = false;
+        isDashing_unused();
+        m_springJoint2D.enabled = false;
         grappleRope.enabled = false;
         rb.gravityScale = 3f;
+        grapplePoint = Vector2.zero;
+
+        if (rb.linearVelocity.magnitude > maxExitSpeed)
+            rb.linearVelocity = rb.linearVelocity.normalized * maxExitSpeed;
     }
 
-    
+    private void isDashing_unused() { }
+
+    // ─── Obstacle check ───────────────────────────────────────────────────────
 
     private void ActualizarRaycastObstaculo()
     {
@@ -211,7 +262,7 @@ public class Tutorial_GrapplingGun : MonoBehaviour
         }
     }
 
-   
+    // ─── Nearest grapple point ────────────────────────────────────────────────
 
     private Transform GetNearestGrapplePoint(Vector2 fromPosition)
     {
@@ -230,6 +281,8 @@ public class Tutorial_GrapplingGun : MonoBehaviour
 
         return nearest;
     }
+
+    // ─── Gizmos ───────────────────────────────────────────────────────────────
 
     private void OnDrawGizmosSelected()
     {

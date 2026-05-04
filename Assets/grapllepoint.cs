@@ -1,37 +1,61 @@
 using UnityEngine;
 
-public class grapllepoint : MonoBehaviour
+public class grapplepoint : MonoBehaviour
 {
+    [Header("Visual")]
+    [SerializeField] private Color colorCercano = Color.green;
+    [SerializeField] private Color colorLejano = Color.gray;
+    [SerializeField] private Color colorActivo = Color.yellow; // cuando estás colgado de este punto
+
+    [Header("Debug")]
     [SerializeField] private float distancia;
-    public Tutorial_GrapplingGun grapple;
-    private GameObject player;
+
+    // Referencias
+    private Tutorial_GrapplingGun grapple;
+    private Transform player;
     private SpriteRenderer render;
-    public bool canGrapple;
+
+    public bool canGrapple { get; private set; }
+    public bool isActive { get; private set; } // true = el jugador está colgado de este punto
+
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player").transform;
         render = GetComponent<SpriteRenderer>();
+
+        // Buscar el GrapplingGun en el player automáticamente
+        grapple = player.GetComponentInChildren<Tutorial_GrapplingGun>();
+
+        if (grapple == null)
+            Debug.LogWarning($"[grapplepoint] No se encontró Tutorial_GrapplingGun en el Player.", this);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        distancia = Vector2.Distance(transform.position, player.transform.position);
-        
-        if (distancia < grapple.maxDistnace)
-        {
-            render.color = Color.green;
-            canGrapple = true;
-        }
+        distancia = Vector2.Distance(transform.position, player.position);
+        canGrapple = distancia < grapple.maxDistnace;
+
+        // Detectar si el jugador está colgado exactamente de este punto
+        isActive = grapple.isGrabing &&
+                   Vector2.Distance(grapple.grapplePoint, transform.position) < 0.1f;
+
+        ActualizarColor();
+    }
+
+    private void ActualizarColor()
+    {
+        if (isActive)
+            render.color = colorActivo;
+        else if (canGrapple)
+            render.color = colorCercano;
         else
-        {
-            render.color= Color.gray;
-            canGrapple = false;
-        }
+            render.color = colorLejano;
+    }
 
-       
-
-        
-          
+    private void OnDrawGizmosSelected()
+    {
+        if (grapple == null) return;
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, 0.3f);
     }
 }
